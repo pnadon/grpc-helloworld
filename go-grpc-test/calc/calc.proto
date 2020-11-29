@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "google.golang.org/grpc/examples/helloworld/calc";
+
+package calc;
+
+service Calculator {
+    rpc Sum (Numbers) returns (Number) {}
+}
+
+message Numbers {
+    repeated Number numbers = 1; 
+}
+
+message Number {
+    int64 number = 1;
+}
